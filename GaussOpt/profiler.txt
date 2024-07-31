@@ -1,0 +1,209 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 96.88    490.04   490.04  6238365     0.00     0.00  matrixMultSub(double*, double*, double*, int, int, int)
+  0.94    494.78     4.75    35245     0.00     0.00  matrixMult(double*, double*, double*, int, int, int)
+  0.77    498.65     3.87   141778     0.00     0.00  matrixMultSubFrag(double*, double*, double*, int, int, int)
+  0.71    502.26     3.61        2     1.80     1.87  init(double*, int, int, int, char*)
+  0.29    503.75     1.49        1     1.49     1.49  blockNorm(double*, int, int)
+  0.29    505.20     1.45        1     1.45     1.45  calculateResidual(double*, double*, int, int)
+  0.10    505.71     0.51    35778     0.00     0.00  matrixInverse(double*, double*, int, double)
+  0.04    505.92     0.21        1     0.21   500.89  solve(int, int, double*, double*, double*, double*)
+  0.02    506.05     0.13 128000000     0.00     0.00  __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::fabs<int>(int)
+  0.00    506.07     0.02      533     0.00     0.00  matrixMultFrag(double*, double*, double*, int, int, int)
+  0.00    506.07     0.00      266     0.00     0.00  norm(double*, int, int)
+  0.00    506.07     0.00        2     0.00     0.00  display(int, int, int, double*, int)
+  0.00    506.07     0.00        1     0.00     0.00  calculateError(double*, int)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 506.07 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00  506.07                 main [1]
+                0.21  500.68       1/1           solve(int, int, double*, double*, double*, double*) [2]
+                3.61    0.13       2/2           init(double*, int, int, int, char*) [6]
+                1.45    0.00       1/1           calculateResidual(double*, double*, int, int) [8]
+                0.00    0.00       2/2           display(int, int, int, double*, int) [19]
+                0.00    0.00       1/1           calculateError(double*, int) [20]
+-----------------------------------------------
+                0.21  500.68       1/1           main [1]
+[2]     99.0    0.21  500.68       1         solve(int, int, double*, double*, double*, double*) [2]
+              490.04    0.00 6238365/6238365     matrixMultSub(double*, double*, double*, int, int, int) [3]
+                4.75    0.00   35245/35245       matrixMult(double*, double*, double*, int, int, int) [4]
+                3.87    0.00  141778/141778      matrixMultSubFrag(double*, double*, double*, int, int, int) [5]
+                1.49    0.00       1/1           blockNorm(double*, int, int) [7]
+                0.51    0.00   35778/35778       matrixInverse(double*, double*, int, double) [9]
+                0.02    0.00     533/533         matrixMultFrag(double*, double*, double*, int, int, int) [11]
+                0.00    0.00     266/266         norm(double*, int, int) [18]
+-----------------------------------------------
+              490.04    0.00 6238365/6238365     solve(int, int, double*, double*, double*, double*) [2]
+[3]     96.8  490.04    0.00 6238365         matrixMultSub(double*, double*, double*, int, int, int) [3]
+-----------------------------------------------
+                4.75    0.00   35245/35245       solve(int, int, double*, double*, double*, double*) [2]
+[4]      0.9    4.75    0.00   35245         matrixMult(double*, double*, double*, int, int, int) [4]
+-----------------------------------------------
+                3.87    0.00  141778/141778      solve(int, int, double*, double*, double*, double*) [2]
+[5]      0.8    3.87    0.00  141778         matrixMultSubFrag(double*, double*, double*, int, int, int) [5]
+-----------------------------------------------
+                3.61    0.13       2/2           main [1]
+[6]      0.7    3.61    0.13       2         init(double*, int, int, int, char*) [6]
+                0.13    0.00 128000000/128000000     __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::fabs<int>(int) [10]
+-----------------------------------------------
+                1.49    0.00       1/1           solve(int, int, double*, double*, double*, double*) [2]
+[7]      0.3    1.49    0.00       1         blockNorm(double*, int, int) [7]
+-----------------------------------------------
+                1.45    0.00       1/1           main [1]
+[8]      0.3    1.45    0.00       1         calculateResidual(double*, double*, int, int) [8]
+-----------------------------------------------
+                0.51    0.00   35778/35778       solve(int, int, double*, double*, double*, double*) [2]
+[9]      0.1    0.51    0.00   35778         matrixInverse(double*, double*, int, double) [9]
+-----------------------------------------------
+                0.13    0.00 128000000/128000000     init(double*, int, int, int, char*) [6]
+[10]     0.0    0.13    0.00 128000000         __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::fabs<int>(int) [10]
+-----------------------------------------------
+                0.02    0.00     533/533         solve(int, int, double*, double*, double*, double*) [2]
+[11]     0.0    0.02    0.00     533         matrixMultFrag(double*, double*, double*, int, int, int) [11]
+-----------------------------------------------
+                0.00    0.00     266/266         solve(int, int, double*, double*, double*, double*) [2]
+[18]     0.0    0.00    0.00     266         norm(double*, int, int) [18]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[19]     0.0    0.00    0.00       2         display(int, int, int, double*, int) [19]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[20]     0.0    0.00    0.00       1         calculateError(double*, int) [20]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [4] matrixMult(double*, double*, double*, int, int, int) [8] calculateResidual(double*, double*, int, int) [19] display(int, int, int, double*, int)
+   [9] matrixInverse(double*, double*, int, double) [5] matrixMultSubFrag(double*, double*, double*, int, int, int) [7] blockNorm(double*, int, int)
+   [3] matrixMultSub(double*, double*, double*, int, int, int) [6] init(double*, int, int, int, char*) [10] __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::fabs<int>(int)
+  [20] calculateError(double*, int) [18] norm(double*, int, int)
+  [11] matrixMultFrag(double*, double*, double*, int, int, int) [2] solve(int, int, double*, double*, double*, double*)

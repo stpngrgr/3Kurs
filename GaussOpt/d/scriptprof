@@ -1,0 +1,11 @@
+#!/bin/bash
+
+./a.out 2000 30 10 3 > t1
+gprof a.out gmon.out > t1prof
+./a.out 4000 30 10 3 > t2
+gprof a.out gmon.out > t2prof
+./a.out 8000 30 10 3 > t3
+gprof a.out gmon.out > t3prof
+./a.out 16000 30 10 3 > t4
+gprof a.out gmon.out > t4prof
+
